@@ -15,6 +15,12 @@ dynamic getEnv(String? key, {dynamic defaultValue}) {
   return value;
 }
 
+BaseColors get(BuildContext? context) {
+  return Theme.of(context!).brightness == Brightness.light
+      ? light.colors!
+      : dark.colors!;
+}
+
 TextTheme getAppTextTheme(TextStyle? appThemeFont, TextTheme? textTheme) {
   return TextTheme(
     headline1: appThemeFont!.merge(textTheme!.headline1),
